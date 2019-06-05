@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9999949583970842 0.002747117806725338 0.0015926469068733887 1.0508007020111858
-  position 0.10180721958420004 0.912853935824262 0.45437878297681944
+  orientation 0.9979192326769238 0.056889638774687896 0.03034425898889057 5.3014544319744425
+  position -0.05731259430426888 1.0320452226857681 0.39038181934727956
 }
 TexturedBackground {
 }
@@ -71,6 +71,45 @@ DEF PYRAMID Solid {
                             Shape {
                               appearance USE A_CYLINDER
                               geometry USE G_CYLINDER
+                            }
+                            Transform {
+                              translation -0.12 0.05 0.04
+                              rotation 0.5773502691896258 0.5773502691896258 0.5773502691896258 4.974189693899574
+                              children [
+                                Shape {
+                                  appearance USE A_CYLINDER
+                                  geometry USE G_CYLINDER
+                                }
+                                Transform {
+                                  translation 0 -0.11 0
+                                  children [
+                                    Shape {
+                                      appearance USE A_SPHERE
+                                      geometry USE G_SPHERE
+                                    }
+                                    Transform {
+                                      translation 0.125110124055381 0.052627031215112224 0.002
+                                      rotation 0.3818961375582459 0.5674071368669846 0.7295234616861231 4.79
+                                      children [
+                                        Shape {
+                                          appearance USE A_CYLINDER
+                                          geometry USE G_CYLINDER
+                                        }
+                                        Transform {
+                                          translation -0.09 -0.09 -0.025
+                                          rotation -0.088797512307434 -0.1875891499012021 0.9782255939441348 1.1
+                                          children [
+                                            Shape {
+                                              appearance USE A_CYLINDER
+                                              geometry USE G_CYLINDER
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
                             }
                           ]
                         }
