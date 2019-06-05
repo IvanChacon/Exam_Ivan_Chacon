@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.9979192326769238 0.056889638774687896 0.03034425898889057 5.3014544319744425
-  position -0.05731259430426888 1.0320452226857681 0.39038181934727956
+  orientation -0.9356112568741083 -0.34442643313924576 -0.07747262849179838 0.4718692591699497
+  position -0.061741630492147224 0.4139750533576082 0.4879524771702102
 }
 TexturedBackground {
 }
@@ -22,7 +22,6 @@ DEF PYRAMID Solid {
         Shape {
           appearance DEF A_CYLINDER PBRAppearance {
             baseColor 0.6431372549019608 0 0
-            transparency 0.1
           }
           geometry DEF G_CYLINDER Cylinder {
             height 0.22
@@ -34,7 +33,7 @@ DEF PYRAMID Solid {
           children [
             Shape {
               appearance DEF A_SPHERE PBRAppearance {
-                baseColor 0.9333333333333333 0.9333333333333333 0.9254901960784314
+                baseColor 0.20392156862745098 0.396078431372549 0.6431372549019608
               }
               geometry DEF G_SPHERE Sphere {
                 radius 0.05
@@ -88,16 +87,16 @@ DEF PYRAMID Solid {
                                       geometry USE G_SPHERE
                                     }
                                     Transform {
-                                      translation 0.125110124055381 0.052627031215112224 0.002
-                                      rotation 0.3818961375582459 0.5674071368669846 0.7295234616861231 4.79
+                                      translation 0.135511 0.052627031215112224 0.003
+                                      rotation 0.3646475979273518 0.5591453478824062 0.7445727696251557 4.79
                                       children [
                                         Shape {
                                           appearance USE A_CYLINDER
                                           geometry USE G_CYLINDER
                                         }
                                         Transform {
-                                          translation -0.09 -0.09 -0.025
-                                          rotation -0.088797512307434 -0.1875891499012021 0.9782255939441348 1.1
+                                          translation -0.099 -0.0955 -0.03
+                                          rotation -0.07880224848750886 -0.23036375022130823 0.9699086287982428 1.2
                                           children [
                                             Shape {
                                               appearance USE A_CYLINDER
@@ -124,6 +123,25 @@ DEF PYRAMID Solid {
       ]
     }
   ]
+  physics Physics {
+  }
+}
+Solid {
+  translation 0.005 0.27 -0.075
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9607843137254902 0.4745098039215686 0
+      }
+      geometry Box {
+        size 0.05 0.05 0.05
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject Box {
+    size 0.05 0.05 0.05
+  }
   physics Physics {
   }
 }
