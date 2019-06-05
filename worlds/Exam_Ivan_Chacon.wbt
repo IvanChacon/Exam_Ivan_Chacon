@@ -1,14 +1,90 @@
 #VRML_SIM R2019a utf8
 WorldInfo {
-  info [
-  ]
 }
 Viewpoint {
-  orientation -0.7 0.7 0.2 0.75
-  position 1.2 1.6 2.3
-
+  orientation -0.9999949583970842 0.002747117806725338 0.0015926469068733887 1.0508007020111858
+  position 0.10180721958420004 0.912853935824262 0.45437878297681944
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
+}
+Floor {
+}
+DEF PYRAMID Solid {
+  children [
+    Group {
+    }
+    Transform {
+      translation 0 0.03 0
+      rotation 0 0 1 -1.5708003061004252
+      children [
+        Shape {
+          appearance DEF A_CYLINDER PBRAppearance {
+            baseColor 0.6431372549019608 0 0
+            transparency 0.1
+          }
+          geometry DEF G_CYLINDER Cylinder {
+            height 0.22
+            radius 0.02
+          }
+        }
+        Transform {
+          translation 0 0.15 0
+          children [
+            Shape {
+              appearance DEF A_SPHERE PBRAppearance {
+                baseColor 0.9333333333333333 0.9333333333333333 0.9254901960784314
+              }
+              geometry DEF G_SPHERE Sphere {
+                radius 0.05
+              }
+            }
+            Transform {
+              translation 0 -0.3 0
+              children [
+                Shape {
+                  appearance USE A_SPHERE
+                  geometry USE G_SPHERE
+                }
+                Transform {
+                  translation 0 0.09 -0.125
+                  rotation 1 0 0 2.1728996938995744
+                  children [
+                    Shape {
+                      appearance USE A_CYLINDER
+                      geometry USE G_CYLINDER
+                    }
+                    Transform {
+                      translation 0 -0.11 0
+                      children [
+                        Shape {
+                          appearance USE A_SPHERE
+                          geometry Sphere {
+                            radius 0.05
+                          }
+                        }
+                        Transform {
+                          translation 0 0.05 -0.12
+                          rotation 1 0 0 -1.15
+                          children [
+                            Shape {
+                              appearance USE A_CYLINDER
+                              geometry USE G_CYLINDER
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  physics Physics {
+  }
 }
