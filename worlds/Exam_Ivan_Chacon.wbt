@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9997765956731626 -0.02034246210566557 -0.005739597517351579 0.5501167947572834
-  position -0.011595241063120846 0.6367205018795787 0.5863907384686188
+  orientation 0.9090094408235753 0.4058003209143915 0.0950154515822953 5.778983922758571
+  position -0.18612055926495344 0.578780238461561 0.6155087039525451
 }
 TexturedBackground {
 }
@@ -190,6 +190,64 @@ Solid {
                   }
                 }
               ]
+              boundingObject USE G_MINI_BOX
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor -0.2 0 0
+            }
+            endPoint Solid {
+              translation -0.225 0 0
+              rotation 0 0 1 0
+              children [
+                Shape {
+                  appearance USE A_MINI_BOX
+                  geometry USE G_MINI_BOX
+                }
+              ]
+              name "solid(1)"
+              boundingObject USE G_MINI_BOX
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0 0 -0.2
+            }
+            endPoint Solid {
+              translation 0 0 -0.225
+              rotation 1 0 0 0
+              children [
+                Shape {
+                  appearance USE A_MINI_BOX
+                  geometry USE G_MINI_BOX
+                }
+              ]
+              name "solid(2)"
+              boundingObject USE G_MINI_BOX
+              physics Physics {
+              }
+            }
+          }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              anchor 0 0 0.2
+            }
+            endPoint Solid {
+              translation 0 0 0.225
+              rotation 1 0 0 0
+              children [
+                Shape {
+                  appearance USE A_MINI_BOX
+                  geometry USE G_MINI_BOX
+                }
+              ]
+              name "solid(3)"
               boundingObject USE G_MINI_BOX
               physics Physics {
               }
