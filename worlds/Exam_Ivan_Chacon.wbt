@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9356112568741083 -0.34442643313924576 -0.07747262849179838 0.4718692591699497
-  position -0.061741630492147224 0.4139750533576082 0.4879524771702102
+  orientation -0.9999655323781567 0.00795299297976257 0.0023841053529264746 0.5825189616999245
+  position 0.02171266958549562 0.6117016815723607 0.45827559195582723
 }
 TexturedBackground {
 }
@@ -135,6 +135,32 @@ Solid {
       }
       geometry Box {
         size 0.05 0.05 0.05
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0 0.03 0
+      }
+      endPoint Solid {
+        translation 0 0.03 0
+        children [
+          Shape {
+            appearance DEF A_MILL PBRAppearance {
+              baseColor 0.9294117647058824 0.8313725490196079 0
+            }
+            geometry Box {
+              size 0.4 0.01 0.05
+            }
+          }
+          HingeJoint {
+          }
+        ]
+        boundingObject Box {
+          size 0.4 0.01 0.05
+        }
+        physics Physics {
+        }
       }
     }
   ]
